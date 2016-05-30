@@ -175,36 +175,6 @@ public:
 	}
 	bool SaveParseTree(std::string inxsdfilename, std::string outfilename );
 
-#if 0
-	void ResolveParentHierarchy();
-	void BuildXsdTypes();
-	void BuildXsdTypes(StringVector);
-	void BuildXsdType(XSTypeDefinition *xsTypeDef );
-	void BuildXsdElements();
-	void BuildSubstitutionGroupAliasing();
-	void BuildXsdElement(XSElementDeclaration *xsElement);
-	void BuildSubstitutionGroupAliasing(XSElementDeclaration *xsElement );
-	void GetFacets(XSSimpleTypeDefinition * simpleType, ISymbolPtr symbol);
-	void ParseList(XSSimpleTypeDefinition * xsSimpleTypeDef, ISymbolPtr typeSymbol);
-	void ParseAttributes(XSComplexTypeDefinition *xsTypeDef, IXmlNodePtr typeSymbol);
-	void ParseXsdType(XSTypeDefinition *xsTypeDef, IXmlNodePtr typeSymbol);
-
-	XSElementDeclaration * FindXsdElement(std::string name);
-	XSTypeDefinition * FindXsdType(std::string name);
-
-	///////////////////////////////////////////////////////////////////
-	SymbolTable _symbols;
-
-protected:
-	void BuildParticle(IXmlNodePtr elem, XSParticle *xsParticle);
-	void BuildElementParticle(IXmlNodePtr type, XSParticle *xsParticle);
-	void SaveParticleDimensions(ISymbolPtr  var, XSParticle *xsParticle);
-
-	void CreateDerivationVariable(IXmlNodePtr typeSymbol, std::string tbasetype, std::string tnamespace, bool bSimple);
-	void BuildParticle(XSParticle *xsParticle, Definition &def);
-	void ResolveSubHierarchy(IXmlNode * node);
-	std::vector<std::string> ResolveSuperHierarchy(IXmlNodePtr node);
-#endif
 	CXercesUtils utils;
 	std::stringstream io;
 	bool							doList	;

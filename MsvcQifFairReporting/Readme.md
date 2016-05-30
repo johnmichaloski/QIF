@@ -17,7 +17,8 @@ The code generation for MsvcQifFairReporting project is multi-threaded, statical
 
 Project Management
 ------------------
-There are two major setup requirements: 1) additional include directories and 2) link library files.
+There are three major setup requirements: 1) additional include directories and 2) link library files,
+3) 
 
 1) In the MsvcQifFairReporting project, the Microsoft Visual C/C++ Command  Line option has 
 
@@ -63,3 +64,7 @@ libraries. In the file MsvcQifFairReporting.cpp there is some linking directives
 	#pragma message( "RELEASE x32" )
 	#pragma comment(lib, "C:\\Program Files (x86)\\CodeSynthesis XSD 4.0\\lib\\vc-10.0\\xerces-c_3.lib")
 	#endif 
+
+
+3) You will need to add the CodeSynthesis DLL to the path or place in the execution folder. I put
+xerces-c_3_1D_vc100 in the Win32/Debug folder, since I am using MSVC 2010.
