@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="FairReports.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="WinUtils.cpp" />
+    <ClCompile Include="XercesUtils.cpp" />
+    <ClCompile Include="XsdParser.cpp" />
+    <ClCompile Include="..\QIFLibrary\Auxiliary.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\Characteristics.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\Expressions.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\Features.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\GenericExpressions.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\Geometry.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\IntermediatesPMI.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\Primitives.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\PrimitivesPD.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\PrimitivesPMI.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFApplications\QIFDocument.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFApplications\QIFMeasurementResources.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFApplications\QIFPlan.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFApplications\QIFProduct.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFApplications\QIFResults.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFApplications\QIFRules.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFApplications\QIFStatistics.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\Topology.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\Traceability.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\Units.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\Visualization.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QIFLibrary\Statistics.cxx">
+      <Filter>QIF</Filter>
+    </ClCompile>
+    <ClCompile Include="MsvcQifFairReporting.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\NIST\StdStringFcn.h" />
+    <ClInclude Include="FairReports.h" />
+    <ClInclude Include="Globals.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="XercesUtils.h" />
+    <ClInclude Include="XsdParser.h" />
+    <ClInclude Include="..\QIFLibrary\Auxiliary.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\Characteristics.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\Expressions.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\Features.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\GenericExpressions.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\Geometry.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\IntermediatesPMI.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\Primitives.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\PrimitivesPD.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\PrimitivesPMI.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFApplications\QIFDocument.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFApplications\QIFMeasurementResources.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFApplications\QIFPlan.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFApplications\QIFProduct.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFApplications\QIFResults.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFApplications\QIFRules.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFApplications\QIFStatistics.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\Topology.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\Traceability.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\Units.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\Visualization.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QIFLibrary\Statistics.hxx">
+      <Filter>QIF</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\tests.txt" />
+    <None Include="Fixes.txt" />
+    <None Include="ReadMe.txt" />
+    <None Include="Scraps.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="QIF">
+      <UniqueIdentifier>{1bc46c5c-8c04-42ba-92d8-e25a4cc74081}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
