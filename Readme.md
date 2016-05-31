@@ -32,7 +32,7 @@ a placeholder for future standardization and is now handled by the Dimensional M
 The order of generation of QIF data generally proceeds clockwise around the diagram, beginning with QIF MBD and ending with 
 QIF Statistics. Of note, users of the QIF information model are not required to implement the entire model.
 
-![QIFDonut](images/QIFDonut.png?raw=true)
+![QIFDonut](images/QIFDonut.png)
 
 
 Included in this github repository is code that generates a First Article Inspection report (FAIR) reports. If you look in the Doc folder
