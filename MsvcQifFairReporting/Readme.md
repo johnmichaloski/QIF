@@ -78,14 +78,24 @@ MsvcQifFairReporting  is a Windows Shell application and you can get "help" by t
 
 in a command shell in the execution folder. It will return:
 
-	  ---q arg              QIF XML file
-	  ---r1 arg             FAIR Report 1 file
-	  ---r3 arg             FAIR Report 3 file
-	  ---v arg              QIF Version
-	  ---h                  Help
-	  --/?                  Help
+	  -q arg              QIF XML file
+	  -r1 arg             FAIR Report 1 file
+	  -r3 arg             FAIR Report 3 file
+	  -v arg              QIF Version
+	  -h                  Help
+	  /?                  Help
 
 There is also a visual basic script (Vbs) file name FairReport.vbs that pop up a dialog to ask for 
 the qif XML file, and then run MsvcQifFairReporting.exe program. FAIR reports 1 & 3 will be put into the
 same folder as the QIF  XML file.
 
+Another way to generate reports with the program is to run in a DOS command window. If you bring up a DOS command window (Run->Start->Cmd) and you change to the Exe folder you can run the command with:
+
+	.\MsvcQifFairReporting.exe -v 1.2 -q "C:\Users\michalos\Documents\GitHub\QIF\src\MsvcQifFairReporting\MsvcQifFairReporting\x64\Debug\QIF_Results_Sample.xml"
+
+In this case, Report1.html and Report3.html will be generated in the same folder as the QIF XML exe file. For example:
+
+	"C:\Users\michalos\Documents\GitHub\QIF\src\MsvcQifFairReporting\MsvcQifFairReporting\x64\Debug\Report1.html"
+
+
+	
