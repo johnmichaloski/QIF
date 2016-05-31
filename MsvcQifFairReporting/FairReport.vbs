@@ -29,7 +29,7 @@ End If
 
 Dim oShell
 Set oShell = WScript.CreateObject ("WScript.Shell")
-oShell.run "MsvcQifFairReporting\Win32\Debug\MsvcQifFairReporting.exe -v -q " &  strFile
+oShell.run "MsvcQifFairReporting\Win32\Debug\MsvcQifFairReporting.exe -v 1.2 -q " &  strFile
 
 
 
