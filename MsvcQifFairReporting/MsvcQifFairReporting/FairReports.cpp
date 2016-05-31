@@ -2,6 +2,17 @@
 // FairReports.cpp
 //
 
+/*
+ * DISCLAIMER:
+ * This software was produced by the National Institute of Standards
+ * and Technology (NIST), an agency of the U.S. government, and by statute is
+ * not subject to copyright in the United States.  Recipients of this software
+ * assume all responsibility associated with its operation, modification,
+ * maintenance, and subsequent redistribution.
+ *
+ * See NIST Administration Manual 4.09.07 b and Appendix I.
+ */
+
 // No precompiled headers...
 //#include "StdAfx.h"
 
@@ -88,7 +99,6 @@ std::string CFairReports::GenerateFAIRRepor1(xercesc::DOMElement* e )
 		full_fai= utils.GetXpathResults(e, "//QIFDocument/PreInspectionTraceability/InspectionMode");
 
 		return Form1();
-		//fair.SaveReport(CFairReports::ExeDirectory()+ "FairReport1.html", report1);
 	}
 	catch (const xml_schema::exception& e)
 	{
@@ -298,7 +308,7 @@ void CFairReports::SaveReport(std::string filename, std::string &report)
 	out << report <<std::endl;
 	out.close();
 }
-std::string CFairReports::StdStringFormat(const char* format, ...)
+std::string CFairReports::StrFormat(const char* format, ...)
 {
 	va_list ap;
 	va_start(ap, format);
@@ -319,6 +329,7 @@ std::string CFairReports::StdStringFormat(const char* format, ...)
 	return tmp.substr(0,m);
 
 }
+#if 0
 std::string CFairReports::ExeDirectory()
 {
 	TCHAR buf[1000];
@@ -332,6 +343,7 @@ std::string CFairReports::ExeDirectory()
 	path=path.substr( 0, path.find_last_of( '\\' ) +1 );
 	return path;
 }
+#endif
 bool CFairReports::ChromeExists()
 {
 	HKEY hKey;
@@ -420,31 +432,31 @@ std::string CFairReports::Form1()
 	form += TEXT("<table width=\"100%\" border=1 style=\"border-collapse: collapse;\">\n");
 
 	form += TEXT("<tr height=75px valign=\"top\" align=\"left\">\n");
-	form += StdStringFormat("<th width=\"1.625in\"><b>1. Part Number </b><br>%s</th>\n", part_numbers[0].c_str());
+	form += StrFormat("<th width=\"1.625in\"><b>1. Part Number </b><br>%s</th>\n", part_numbers[0].c_str());
 
-	form += StdStringFormat("<th width=\"1.625in\"><b>2. Part Name </b><br>%s</th>\n", part_names[0].c_str());
-	form += StdStringFormat("<th width=\"1.625in\"><b>3. Serial Number </b><br>%s</th>\n", serial_numbers[0].c_str());
-	form += StdStringFormat("<th width=\"1.625in\"><b>4. FAI Report Number </b><br>%s</th>\n", FAI_report_numbers[0].c_str());
+	form += StrFormat("<th width=\"1.625in\"><b>2. Part Name </b><br>%s</th>\n", part_names[0].c_str());
+	form += StrFormat("<th width=\"1.625in\"><b>3. Serial Number </b><br>%s</th>\n", serial_numbers[0].c_str());
+	form += StrFormat("<th width=\"1.625in\"><b>4. FAI Report Number </b><br>%s</th>\n", FAI_report_numbers[0].c_str());
 	form += TEXT("</tr>\n");
 
 
 	form += TEXT("<tr height=75px valign=\"top\" align=\"left\">\n");
-	form += StdStringFormat("<td  ><b> 5. Part Revision Level</b><br>%s</td>\n", part_revisions[0].c_str());
-	form += StdStringFormat("<td ><b> 6.Drawing Number </b><br>%s</td>\n", drawing_numbers[0].c_str());
-	form += StdStringFormat("<td ><b> 7. Drawing revision level</b><br>%s</td>\n", drawing_revisions[0].c_str());
-	form += StdStringFormat("<td  ><b> 8. Additional Changes </b><br>%s</td>\n", additional_changes[0].c_str());
+	form += StrFormat("<td  ><b> 5. Part Revision Level</b><br>%s</td>\n", part_revisions[0].c_str());
+	form += StrFormat("<td ><b> 6.Drawing Number </b><br>%s</td>\n", drawing_numbers[0].c_str());
+	form += StrFormat("<td ><b> 7. Drawing revision level</b><br>%s</td>\n", drawing_revisions[0].c_str());
+	form += StrFormat("<td  ><b> 8. Additional Changes </b><br>%s</td>\n", additional_changes[0].c_str());
 	form += TEXT("</tr>\n");
 
 	form += TEXT("<tr height=70px valign=\"top\" align=\"left\">\n");
-	form += StdStringFormat("<td  ><b> 9. Manufacturing Process<br>Reference</b></td>\n");
-	form += StdStringFormat("<td ><b> 10. Organization Name </b><br>%s</td>\n", organization_names[0].c_str());
-	form += StdStringFormat("<td ><b> 11. Supplier Code</b><br>%s</td>\n", supplier_codes[0].c_str());
-	form += StdStringFormat("<td   ><b> 12. P.O. Number </b><br>%s</td>\n", po_numbers[0].c_str());
+	form += StrFormat("<td  ><b> 9. Manufacturing Process<br>Reference</b></td>\n");
+	form += StrFormat("<td ><b> 10. Organization Name </b><br>%s</td>\n", organization_names[0].c_str());
+	form += StrFormat("<td ><b> 11. Supplier Code</b><br>%s</td>\n", supplier_codes[0].c_str());
+	form += StrFormat("<td   ><b> 12. P.O. Number </b><br>%s</td>\n", po_numbers[0].c_str());
 	form += TEXT("</tr>\n");
 
 	form += TEXT("<tr height=38px valign=\"top\" align=\"left\">\n");
-	form += StdStringFormat("<td  ><b> 13. Detail FAI &nbsp;&nbsp;&nbsp; &%s;</b></td>\n", detail_fai[0] == "DETAIL" ? "#9745" : "#9744" );
-	form += StdStringFormat("<td  ><b> 14. Full FAI &nbsp;&nbsp;&nbsp; &%s;<br> Partial FAI&nbsp;&nbsp;&nbsp; &%s;</b></td>\n", 
+	form += StrFormat("<td  ><b> 13. Detail FAI &nbsp;&nbsp;&nbsp; &%s;</b></td>\n", detail_fai[0] == "DETAIL" ? "#9745" : "#9744" );
+	form += StrFormat("<td  ><b> 14. Full FAI &nbsp;&nbsp;&nbsp; &%s;<br> Partial FAI&nbsp;&nbsp;&nbsp; &%s;</b></td>\n", 
 		full_fai[0] == "FAI_Full" ? "#9745" : "#9744" , full_fai[0] != "FAI_Full" ? "#9745" : "#9744");
 	form += TEXT("<td  colspan=2><br><b> Baseline Part Number including revision number</b></td>\n");
 	form += TEXT("</tr>\n");
@@ -560,7 +572,7 @@ std::string CFairReports::Form3TopOfPage(int page, int total_pages)
 	form += TEXT("<table width=\"100%\" border=0> \n");
 	form += TEXT("<tr>\n");
 	form += TEXT("<th width=\"70%\" align=\"left\"> AS9102 Rev A First Article Inspection </th>\n");
-	form += StdStringFormat("<th width=\"30%\" align=\"right\"> Sheet %d of <u>%d</u></th>\n",page, total_pages);
+	form += StrFormat("<th width=\"30%\" align=\"right\"> Sheet %d of <u>%d</u></th>\n",page, total_pages);
 	form += TEXT("</tr>\n");
 	form += TEXT("<tr> <td colspan=2><b> Form 3: Characteristic Accountability, Verification and Compatability Evaluation </b></tr></tr>\n");
 	form += TEXT("</table>\n");
@@ -602,7 +614,7 @@ std::string CFairReports::Form3Trailer()
 {
 	std::string form;
 	form += TEXT("<tr> <td align=\"center\" colspan=8 style=\"border:solid 0px #060\"><b> The signature indicates that all characteristics are accounted for; meeting requirements or are properly documented for disposition. </b></td></tr>\n");
-	form += StdStringFormat("<tr> <td align=\"center\" colspan=7 style=\"border-top:solid 0px #060\"><b> 12. Prepared By</b><br>%s</td> <td align=\"center\"><b> 13. Date</b><br>%s </td></tr>\n",prepared_by[0].c_str(), date[0].c_str());
+	form += StrFormat("<tr> <td align=\"center\" colspan=7 style=\"border-top:solid 0px #060\"><b> 12. Prepared By</b><br>%s</td> <td align=\"center\"><b> 13. Date</b><br>%s </td></tr>\n",prepared_by[0].c_str(), date[0].c_str());
 
 	form += TEXT("</table>\n");
 
@@ -661,7 +673,7 @@ std::string CFairReports::Form3()
 			std::string tooling;
 			for(size_t k=0; k< char_info[i].measurement_names.size(); k++) 
 				tooling+=char_info[i].measurement_names[k] +"<br>";
-			form += StdStringFormat("<tr> <td> %s </td> <td> %s </td> <td> %s </td> <td> %s </td> <td> %s </td><td> %s </td><td> %s </td><td> %s </td></tr>\n",
+			form += StrFormat("<tr> <td> %s </td> <td> %s </td> <td> %s </td> <td> %s </td> <td> %s </td><td> %s </td><td> %s </td><td> %s </td></tr>\n",
 				("<CENTER>" + char_info[i].Name + "</CENTER>" ).c_str(), 
 				("<CENTER>" + char_info[i].print_drawing_name +"<br>"+ char_info[i].sheet_number+ "<br>" + char_info[i].drawing_zone +  "</CENTER>").c_str(),
 				("<CENTER>" + char_info[i].characteristic_designator + "</CENTER>").c_str(),

@@ -68,3 +68,23 @@ libraries. In the file MsvcQifFairReporting.cpp there is some linking directives
 
 3) You will need to add the CodeSynthesis DLL to the path or place in the execution folder. I put
 xerces-c_3_1D_vc100 in the Win32/Debug folder, since I am using MSVC 2010.
+
+
+Running  MsvcQifFairReporting 
+----------------------------
+MsvcQifFairReporting  is a Windows Shell application and you can get "help" by typing 
+
+	.\MsvcQifFairReporting.exe -h
+
+in a command shell in the execution folder. It will return:
+
+	  ---q arg              QIF XML file
+	  ---r1 arg             FAIR Report 1 file
+	  ---r3 arg             FAIR Report 3 file
+	  ---v arg              QIF Version
+	  ---h                  Help
+	  --/?                  Help
+
+There is also a visual basic script (Vbs) file that pop up a dialog to ask for 
+the qif XML file, and then run MsvcQifFairReporting.exe program.
+

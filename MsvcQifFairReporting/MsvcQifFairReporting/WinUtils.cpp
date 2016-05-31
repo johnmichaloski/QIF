@@ -9,6 +9,7 @@
 #include "Windows.h"
 #include <exception>
 
+#ifdef WIN32
 // C++ Project ->Properties -> Compiler -> Code Generation -> Enable C++ Exceptions -> Yes with SEH Exceptions (/EHa) 
 static void trans_func( unsigned int u, EXCEPTION_POINTERS* pExp )
 {
@@ -27,7 +28,9 @@ struct CSetup
 };
 
 CSetup setup;
+#endif
 
+#if 0
 #include <string>
 std::string ExeDirectory()
 {
@@ -41,3 +44,5 @@ std::string ExeDirectory()
 	cmd=cmd.substr(0,delimPos);
 	return cmd.substr( 0, cmd.find_last_of( '\\' ) +1 );
 }
+
+#endif

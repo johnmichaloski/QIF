@@ -2,9 +2,16 @@
 // Globals.h
 //
 
-// This software was developed by U.S. Government employees as part of
-// their official duties and is not subject to copyright. No warranty implied 
-// or intended.
+/*
+ * DISCLAIMER:
+ * This software was produced by the National Institute of Standards
+ * and Technology (NIST), an agency of the U.S. government, and by statute is
+ * not subject to copyright in the United States.  Recipients of this software
+ * assume all responsibility associated with its operation, modification,
+ * maintenance, and subsequent redistribution.
+ *
+ * See NIST Administration Manual 4.09.07 b and Appendix I.
+ */
 
 #pragma once
 #pragma warning(disable : 4996)

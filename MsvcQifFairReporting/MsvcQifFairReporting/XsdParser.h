@@ -2,6 +2,18 @@
 // XsdParser.h
 //
 
+
+/*
+ * DISCLAIMER:
+ * This software was produced by the National Institute of Standards
+ * and Technology (NIST), an agency of the U.S. government, and by statute is
+ * not subject to copyright in the United States.  Recipients of this software
+ * assume all responsibility associated with its operation, modification,
+ * maintenance, and subsequent redistribution.
+ *
+ * See NIST Administration Manual 4.09.07 b and Appendix I.
+ */
+
 #pragma once
 #include <string>
 #include <vector>
@@ -36,54 +48,13 @@
 #include <xercesc/sax2/DefaultHandler.hpp>
 
 #include "XercesUtils.h"
-#include "SymbolTable.h"
 #include "Globals.h"
 
 using namespace xercesc;
 using namespace std;
 XERCES_CPP_NAMESPACE_USE
 
-class Definition
-{
-public:
-	std::string name;
-	std::string type_name;
-	int min;
-	int max;
-	bool bOptional;
-	bool bSimple;
-	std::string basetypename;
-	XSParticle::TERM_TYPE termType;
-	std::vector<std::string> members;
-	XSModelGroup::COMPOSITOR_TYPE compositorType;
-	std::string TERM_name;
-};
-typedef std::map<std::string, Definition> CDefinitionMap;
-
-__declspec(selectany)  CDefinitionMap DefinitionMap;
-
-class StrX
-{
-public :
-
-	StrX(const XMLCh* const toTranscode)
-	{
-		// Call the private transcoding method
-		fLocalForm = XMLString::transcode(toTranscode);
-	}
-
-	~StrX()
-	{
-		XMLString::release(&fLocalForm);
-	}
-	const char* localForm() const
-	{
-		return fLocalForm;
-	}
-
-private :
-	char*   fLocalForm;
-};
+//#define StrX(x) xercesc::XMLString::transcode(x)
 
 inline XERCES_STD_QUALIFIER ostream& operator<<(XERCES_STD_QUALIFIER ostream& target, const StrX& toDump)
 {
@@ -91,6 +62,11 @@ inline XERCES_STD_QUALIFIER ostream& operator<<(XERCES_STD_QUALIFIER ostream& ta
     return target;
 }
 
+
+/**
+* \brief Prints error output from Xerces XML Parser. 
+* Copied from CodeSynthesis example.
+*/
 class XPrintHandler : public DefaultHandler
 {
 public:
@@ -112,8 +88,6 @@ public:
     void error(const SAXParseException& exc);
     void fatalError(const SAXParseException& exc);
     void resetErrors();
-
-
 private:
     bool            fSawErrors;
 };
@@ -152,6 +126,10 @@ inline void XPrintHandler::resetErrors()
     fSawErrors = false;
 }
 
+/**
+* \brief Front end to Xerces XML Parser. 
+* Takes std string converts to Xerces string and parses into DOM document.
+*/
 
 class CXsdParser
 {
@@ -163,16 +141,7 @@ public:
 
 	void XsdParse(std::string inxsdfilename );
 
-	void Init()
-	{
-		doList				= false;
-		schemaFullChecking	= false;
-		xsdFile             = 0;
-		parsedOneSchemaOkay=false;
-		grammarPool = 0;
-		parser = 0;
-		xsModel=NULL;
-	}
+	void Init();
 	bool SaveParseTree(std::string inxsdfilename, std::string outfilename );
 
 	CXercesUtils utils;

@@ -2,6 +2,17 @@
 //  XsdParser.cpp
 //
 
+/*
+ * DISCLAIMER:
+ * This software was produced by the National Institute of Standards
+ * and Technology (NIST), an agency of the U.S. government, and by statute is
+ * not subject to copyright in the United States.  Recipients of this software
+ * assume all responsibility associated with its operation, modification,
+ * maintenance, and subsequent redistribution.
+ *
+ * See NIST Administration Manual 4.09.07 b and Appendix I.
+ */
+
 #include "XsdParser.h"
 #include "XercesUtils.h"
 #include <iostream>
@@ -15,11 +26,7 @@
 #include <xercesc/framework/psvi/XSModelGroupDefinition.hpp>
 
 #define CLEANFETCH(Y,X,Z) try{ Y=X; } catch(...) { Y=Z; }
-static std::string GetText(const XMLCh* xstr)
-{
-	if (xstr==NULL) return "";
-	return	StrX(xstr).localForm();
-}
+
 static std::string ToStr( const XMLCh* toTranscode ) 
 {  
 	return XMLString::transcode(toTranscode); 
@@ -28,7 +35,12 @@ static XMLCh *ToXMLCh ( std::string str)
 {
 	return  XMLString::transcode(str.c_str());
 }
-
+static std::string GetText(const XMLCh* xstr)
+{
+	if (xstr==NULL) return "";
+	//return	StrX(xstr).localForm();
+	ToStr(xstr);
+}
 void CXsdParser::XsdParse(std::string inxsdfilename )
 {
 	xsdFile             = inxsdfilename.c_str();
@@ -107,4 +119,14 @@ bool CXsdParser::SaveParseTree(std::string inxsdfilename, std::string outfilenam
 
 	}
 	return parsedOneSchemaOkay;
+}
+void  CXsdParser::Init()
+{
+	doList				= false;
+	schemaFullChecking	= false;
+	xsdFile             = 0;
+	parsedOneSchemaOkay=false;
+	grammarPool = 0;
+	parser = 0;
+	xsModel=NULL;
 }
