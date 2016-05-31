@@ -23,7 +23,8 @@
 #include <string>
 #include <vector>
 #include <boost/program_options.hpp>
-//using namespace  boost::program_options;
+#include "StdStringFcn.h"
+
 namespace po = boost::program_options;
 
 namespace Globals
@@ -81,6 +82,15 @@ public:
 				if (vm.count("-q")) { qiffilename= vm["-q"].as<std::string>();}
 				if (vm.count("-r1")) { report1filename= vm["-r1"].as<std::string>();}
 				if (vm.count("-r3")) { report3filename= vm["-r3"].as<std::string>();}
+				if (!vm.count("-r1")) 
+				{ 
+					report1filename= ExtractDirectory(qiffilename) + "FairReport1.html" ;
+				}
+				if (!vm.count("-r3")) 
+				{ 
+					report3filename= ExtractDirectory(qiffilename) + "FairReport3.html" ;
+				}
+
 			}
 			catch(std::exception e)
 			{

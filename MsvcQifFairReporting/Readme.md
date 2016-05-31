@@ -85,6 +85,7 @@ in a command shell in the execution folder. It will return:
 	  ---h                  Help
 	  --/?                  Help
 
-There is also a visual basic script (Vbs) file that pop up a dialog to ask for 
-the qif XML file, and then run MsvcQifFairReporting.exe program.
+There is also a visual basic script (Vbs) file name FairReport.vbs that pop up a dialog to ask for 
+the qif XML file, and then run MsvcQifFairReporting.exe program. FAIR reports 1 & 3 will be put into the
+same folder as the QIF  XML file.
 
